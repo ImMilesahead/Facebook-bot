@@ -39,7 +39,7 @@ app.listen(app.get('port'), function() {
 })
 
 app.post('/webhook/', function (req, res) {
-    let messing_events = req.body.entry[0].messaging
+    let messaging_events = req.body.entry[0].messaging
     for (let i = 0; i < messaging_events.length; i++){
 	let event = req.body.entry[0].messaging[i]
 	let sender = event.sender.id
