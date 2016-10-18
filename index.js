@@ -21,7 +21,7 @@ app.get('/test', function (req, res) {
 
 // Index route
 app.get('/', function (req, res) {
-    res.send('<!DOCTYPE html><html><head><title>Testing</title></head><body><h1>Hello world, I am a chat bot. ayyy lmoa</h1></body></html>')
+    res.send('<!DOCTYPE html><html><head><title>Testing</title></head><body><h1>Hello world, I am a chat bot. ayyy lmao</h1></body></html>')
 })
 
 
