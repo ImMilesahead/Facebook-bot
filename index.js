@@ -22,9 +22,6 @@ app.get('/test', function (req, res) {
 // Index route
 app.get('/', function (req, res) {
     html = "<!DOCTYPE html><html><head>"
-    html += "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
-    html += "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>"
-    html += "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>"
     html += "<title>Testing</title>"
     html += "</head>"
     html += "<body>"
@@ -55,9 +52,9 @@ app.post('/webhook/', function (req, res) {
 	    if (event.message && event.message.text){
 	        let text = event.message.text
             if (text == 'Time'){
-                //var now = Date();
+                var now = Date();
 
-                //sendTextMessage(sender, now.getHours());
+                sendTextMessage(sender, now);
             }else {
 	            sendTextMessage(sender, "Text recieved, echo: " + text.substring(0, 200))
             }	
