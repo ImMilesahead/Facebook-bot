@@ -21,7 +21,7 @@ app.get('/test', function (req, res) {
 
 // Index route
 app.get('/', function (req, res) {
-    res.send('Hello world, I am a chat bot. ayyy lmow')
+    res.send('<h1>Hello world, I am a chat bot. ayyy lmow</h1>')
 })
 
 
@@ -46,9 +46,9 @@ app.post('/webhook/', function (req, res) {
 	    if (event.message && event.message.text){
 	        let text = event.message.text
             if (text == 'Time'){
-                var now = Date();
+                //var now = Date();
 
-                sendTextMessage(sender, now.getHours());
+                //sendTextMessage(sender, now.getHours());
             }else {
 	            sendTextMessage(sender, "Text recieved, echo: " + text.substring(0, 200))
             }	
