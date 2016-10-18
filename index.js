@@ -53,7 +53,12 @@ app.post('/webhook/', function (req, res) {
 	        let text = event.message.text
             if (text == 'Time'){
                 var now = new Date();
-                var hours = (now.getHours() < 13 ? now.getHours() : now.getHours - 12);
+                var hours
+                if (now.getHours() < 13){
+                    hours = now.getHours();
+                }else{
+                    hours = now.getHours() - 12
+                }
                 sendTextMessage(sender, hours);
             }else {
 	            sendTextMessage(sender, "Text recieved, echo: " + text.substring(0, 200))
