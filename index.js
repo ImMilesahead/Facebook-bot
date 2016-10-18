@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
     html += "<title>Testing</title>"
     html += "</head>"
     html += "<body>"
-    html += "<navbar><h1>Hello world, I am a chat bot. ayyy lmao</h1></navbar>"
+    html += "<h1>Hello world, I am a chat bot. ayyy lmao</h1>"
     html += "</body></html>"
     res.send(html)
 })
