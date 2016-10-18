@@ -41,12 +41,16 @@ app.listen(app.get('port'), function() {
 app.post('/webhook/', function (req, res) {
     let messaging_events = req.body.entry[0].messaging
     for (let i = 0; i < messaging_events.length; i++){
-	let event = req.body.entry[0].messaging[i]
-	let sender = event.sender.id
-	if (event.message && event.message.text){
-	    let text = event.message.text
-	    sendTextMessage(sender, "Text recieved, echo: " + text.substring(0, 200))
-	}
+	    let event = req.body.entry[0].messaging[i]
+	    let sender = event.sender.id
+	    if (event.message && event.message.text){
+	        let text = event.message.text
+            if (text == 'Time'){
+                sendTextMessage(sender, "I don't know how to tell time yet, sorry.")
+            }else {
+	            sendTextMessage(sender, "Text recieved, echo: " + text.substring(0, 200))
+            }	
+        }
     }
     res.sendStatus(200)
 })
