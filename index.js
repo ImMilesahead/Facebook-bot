@@ -21,7 +21,16 @@ app.get('/test', function (req, res) {
 
 // Index route
 app.get('/', function (req, res) {
-    res.send('<!DOCTYPE html><html><head><title>Testing</title></head><body><h1>Hello world, I am a chat bot. ayyy lmao</h1></body></html>')
+    html = "<!DOCTYPE html><html><head>"
+    html += "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">"
+    html += "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>"
+    html += "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>"
+    html += "<title>Testing</title>"
+    html += "</head>"
+    html += "<body>"
+    html += "<navbar><h1>Hello world, I am a chat bot. ayyy lmao</h1></navbar>"
+    html += "</body></html>"
+    res.send(html)
 })
 
 
@@ -77,28 +86,3 @@ function sendTextMessage(sender, text) {
         }
     })
 }
-
-/*
-function sendTextMessage(sender, text){
-	let messageData = {text:text}
-	request({
-		url: 'https://graph.facebook.com/v2.6/me/messages',
-		qs: {access_token:token},
-		method: 'POST',
-		json: {
-			recipient: {id:sender},
-			message: messageData,
-		}
-	}, 	function(error, response, body){
-			if(error){
-				console.log('Error sending messages: ', error)
-			} else if (response.body.error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        }
-    })
-}
-
-
-*/
