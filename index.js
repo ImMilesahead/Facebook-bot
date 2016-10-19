@@ -112,7 +112,7 @@ function searchForKeywords(wordList, keyword){
         console.log("6")
         console.log(wordList)
         console.log("Length: " + String(wordList.length))
-    for (var i = 0; i < wordList.length-1; i++) {
+    for (var i = 0; i < wordList.length; i++) {
         console.log("7")
         console.log(wordList[i])
         if (keyword === wordList[i]){
