@@ -91,6 +91,9 @@ function getResponse(text)
     if(searchForKeywords(words, "TIME")){
         var now = Date()
         var hour = now.getHours()
+        console.log("******************************************************************************")
+        console.log(hour)
+        console.log("******************************************************************************")
         hour -= 5
         if (hour < 0){
             hour = 24 - hour
