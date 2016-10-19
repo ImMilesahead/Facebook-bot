@@ -113,7 +113,7 @@ function sanitize(str) {
 
 function searchForKeywords(wordList, keyword){
     for (var word in wordList) {
-        if (keyword == word){
+        if (keyword === word){
             return true
         }
     }
