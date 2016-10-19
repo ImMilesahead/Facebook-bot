@@ -117,6 +117,7 @@ function searchForKeywords(wordList, keyword){
         console.log(wordList)
     for (var word in wordList) {
         console.log("7")
+        console.log(word)
         if (keyword === word){
             console.log("8")
             return (1 === 1)
