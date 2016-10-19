@@ -86,7 +86,7 @@ function getResponse(text)
 {
     var returnText = ""
     //text = sanitize(text);
-    text = toUpper(text);
+    text = text.toUpperCase()
     var words = text.split(' ')
     if(searchForKeywords(words, "TIME")){
         var now = Date()
