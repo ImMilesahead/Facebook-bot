@@ -44,28 +44,18 @@ app.listen(app.get('port'), function() {
     console.log('running on port', app.get('port'))
 })
 
+function convertToBinary(text){
+
+}
+
 app.post('/webhook/', function (req, res) {
     let messaging_events = req.body.entry[0].messaging
     for (let i = 0; i < messaging_events.length; i++){
 	    let event = req.body.entry[0].messaging[i]
 	    let sender = event.sender.id
 	    if (event.message && event.message.text){
-	        let text = event.message.text
-            if (text == 'Time'){
-                var now = new Date();
-                var hours
-                var pm
-                if (now.getHours() < 13){
-                    hours = now.getHours() + 5;
-                    pm = "pm"
-                }else{
-                    hours = now.getHours() - 7
-                    pm = "am"
-                }
-                sendTextMessage(sender, hours + pm);
-            }else {
-	            sendTextMessage(sender, "Text recieved, echo: " + text.substring(0, 200))
-            }	
+	        let text = getText(event.message.text)
+            sendTextMessage(sender, text)
         }
     }
     res.sendStatus(200)
@@ -90,4 +80,37 @@ function sendTextMessage(sender, text) {
             console.log('Error: ', response.body.error)
         }
     })
+}
+
+function getResponse(text)
+{
+    var returnText = ""
+    text = sanitize(text);
+    text = toUpper(text);
+    var words = text.split(' ')
+    if(searchForKeywords(words, "TIME")){
+        var now = Date()
+        var hour = now.getHours()
+        hour -= 5
+        if (hour < 0){
+            hour = 24 - hour
+        }
+        text = hour
+    }
+
+    return text;
+}
+
+function sanitize(str) {
+    // return htmlentities(str,'ENT_QUOTES');
+    return $('<div></div>').text(str).html().replace(/"/gi,'&quot;').replace(/'/gi,'&apos;');   
+}
+
+function searchForKeywords(wordList, keyword){
+    for (word in wordList) {
+        if (keyword == word){
+            return true
+        }
+    }
+    return false
 }
