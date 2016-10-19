@@ -107,7 +107,7 @@ function sanitize(str) {
 }
 
 function searchForKeywords(wordList, keyword){
-    for (word in wordList) {
+    for (var word in wordList) {
         if (keyword == word){
             return true
         }
