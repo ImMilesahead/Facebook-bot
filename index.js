@@ -21,7 +21,7 @@ app.get('/test', function (req, res) {
 
 // Index route
 app.get('/', function (req, res) {
-    html = "<!DOCTYPE html><html><head>"
+    var html = "<!DOCTYPE html><html><head>"
     html += "<title>Testing</title>"
     html += "</head>"
     html += "<body>"
