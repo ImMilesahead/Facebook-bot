@@ -98,7 +98,7 @@ function getResponse(text)
         text = hour
     }
 
-    return text;
+    return returnText;
 }
 
 function sanitize(str) {
