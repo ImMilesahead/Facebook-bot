@@ -85,7 +85,7 @@ function sendTextMessage(sender, text) {
 function getResponse(text)
 {
     var returnText = ""
-    text = sanitize(text);
+    //text = sanitize(text);
     text = toUpper(text);
     var words = text.split(' ')
     if(searchForKeywords(words, "TIME")){
