@@ -54,7 +54,7 @@ app.post('/webhook/', function (req, res) {
 	    let event = req.body.entry[0].messaging[i]
 	    let sender = event.sender.id
 	    if (event.message && event.message.text){
-        console.log("******************************************************************************")
+        console.log("1")
 	        let text = getResponse(event.message.text)
             sendTextMessage(sender, text)
         }
@@ -89,14 +89,14 @@ function getResponse(text)
     //text = sanitize(text);
     text = text.toUpperCase()
     var words = text.split(' ')
-        console.log("******************************************************************************")
+        console.log("2")
     if(searchForKeywords(words, "TIME")){
-        console.log("******************************************************************************")
+        console.log("3")
         var now = Date()
         var hour = now.getHours()
-        console.log("******************************************************************************")
+        console.log("4")
         console.log(hour)
-        console.log("******************************************************************************")
+        console.log("5")
         hour -= 5
         if (hour < 0){
             hour = 24 - hour
@@ -113,12 +113,13 @@ function sanitize(str) {
 }
 
 function searchForKeywords(wordList, keyword){
-        console.log("******************************************************************************")
+        console.log("6")
         console.log(wordList)
     for (var word in wordList) {
-        console.log("******************************************************************************")
+        console.log("7")
         if (keyword === word){
-            return true
+            console.log("8")
+            return (1 === 1)
         }
     }
     return false
