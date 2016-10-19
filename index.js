@@ -122,5 +122,5 @@ function searchForKeywords(wordList, keyword){
             return (1 === 1)
         }
     }
-    return false
+    return (1 === 0)
 }
