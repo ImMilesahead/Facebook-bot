@@ -115,10 +115,10 @@ function sanitize(str) {
 function searchForKeywords(wordList, keyword){
         console.log("6")
         console.log(wordList)
-    for (var word in wordList) {
+    for (var i = 0; i < wordList.length; i++) {
         console.log("7")
-        console.log(word)
-        if (keyword === word){
+        console.log(wordList[i])
+        if (keyword === wordList[i]){
             console.log("8")
             return (1 === 1)
         }
