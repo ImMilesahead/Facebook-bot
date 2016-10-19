@@ -89,6 +89,7 @@ function getResponse(text)
     //text = sanitize(text);
     text = text.toUpperCase()
     var words = text.split(' ')
+        console.log("******************************************************************************")
     if(searchForKeywords(words, "TIME")){
         var now = Date()
         var hour = now.getHours()
