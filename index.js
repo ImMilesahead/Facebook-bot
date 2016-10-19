@@ -90,12 +90,12 @@ function getResponse(text)
     var words = text.split(' ')
     if(searchForKeywords(words, "TIME")){
         var now = Date()
-        var hour = now.getHours()
+        var hgitour = now.getHours()
         hour -= 5
         if (hour < 0){
             hour = 24 - hour
         }
-        text = hour
+        returnText = hour
     }
 
     return returnText;
