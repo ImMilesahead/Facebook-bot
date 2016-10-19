@@ -55,9 +55,9 @@ app.post('/webhook/', function (req, res) {
                 var now = new Date();
                 var hours
                 if (now.getHours() < 13){
-                    hours = now.getHours();
+                    hours = now.getHours() + 5;
                 }else{
-                    hours = now.getHours() - 12
+                    hours = now.getHours() - 7
                 }
                 sendTextMessage(sender, hours);
             }else {
