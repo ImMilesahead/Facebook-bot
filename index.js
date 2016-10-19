@@ -82,20 +82,15 @@ function sendTextMessage(sender, text) {
 function getResponse(text)
 {
     var returnText = ""
-    //text = sanitize(text);
+    text = sanitize(text);
     text = text.toUpperCase()
     var words = text.split(' ')
-        console.log("2")
     if(searchForKeywords(words, "TIME")){
-        console.log("3")
         var now = new Date()
         var hour = now.getHours()
-        console.log("4")
-        console.log(hour)
-        console.log("5")
         hour -= 5
         if (hour < 0){
-            hour = 24 - hour
+            //hour = 24 - hour
         }
         returnText = hour
     }
@@ -109,14 +104,8 @@ function sanitize(str) {
 }
 
 function searchForKeywords(wordList, keyword){
-        console.log("6")
-        console.log(wordList)
-        console.log("Length: " + String(wordList.length))
     for (var i = 0; i < wordList.length; i++) {
-        console.log("7")
-        console.log(wordList[i])
         if (keyword === wordList[i]){
-            console.log("8")
             return (1 === 1)
         }
     }
