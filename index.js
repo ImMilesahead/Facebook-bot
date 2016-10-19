@@ -91,6 +91,7 @@ function getResponse(text)
     var words = text.split(' ')
         console.log("******************************************************************************")
     if(searchForKeywords(words, "TIME")){
+        console.log("******************************************************************************")
         var now = Date()
         var hour = now.getHours()
         console.log("******************************************************************************")
